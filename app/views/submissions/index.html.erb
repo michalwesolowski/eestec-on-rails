@@ -8,7 +8,8 @@
       <th>Name</th>
       <th>Description</th>
       <th>Date of birth</th>
-      <th colspan="3"></th>
+      <th>Accepted</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -18,10 +19,11 @@
         <td><%= submission.name %></td>
         <td><%= submission.description %></td>
         <td><%= submission.date_of_birth %></td>
+        <td><%= submission.accepted %></td>
         <td><%= link_to 'Show', submission %></td>
         <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
         <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Accept', accept_path, method: :post %></td>
+        <td><%= link_to 'Accept', "/accept/#{submission.id}", method: :post %></td>
 
       </tr>
     <% end %>
